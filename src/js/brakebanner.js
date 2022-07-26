@@ -34,17 +34,40 @@ class BrakeBanner{
 	  const bickContainer  =  new PIXI.Container();
 	  this.stage.addChild(bickContainer);
 
-
 	  bickContainer.scale.x=bickContainer.scale.y=0.3
 	  const  bikeImage =  new PIXI.Sprite(this.loader.resources['brake_bike.png'].texture);
 
 	  bickContainer.addChild(bikeImage);
 
+
+	  const  bikeLever =  new PIXI.Sprite(this.loader.resources['brake_lever.png'].texture);
+
+	  bickContainer.addChild(bikeLever);
+
+	
+	  bikeLever.pivot.x= 455;
+	  bikeLever.pivot.y= 455;
+	  bikeLever.x=722
+	  bikeLever.y=900
+
+	  const  bikeHandlerbar =  new PIXI.Sprite(this.loader.resources['brake_handlerbar.png'].texture);
+
+	  bickContainer.addChild(bikeHandlerbar);
+	  
+
+	  bikeLever.rotation=Math.PI/180*-30;
+
+	  this.stage.addChild(actionButton);
+
+
+	  actionButton.interactive = true ;
+	  actionButton.buttonMode = true ;
+
+
 	}
 
 	createActionBtn(){
 		let actionBtn = new PIXI.Container();
-		this.stage.addChild(actionBtn);
 
 		let btn = new PIXI.Sprite(this.loader.resources['btn.png'].texture);
 		
